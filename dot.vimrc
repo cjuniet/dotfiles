@@ -37,4 +37,9 @@ if has("gui_running")
 endif
 
 map Q gq
-
+map <C-Tab>   :bnext<CR>
+map <S-C-Tab> :bprevious<CR>
+map <F4>      :bd<CR>
+map <F5>      :set !wrap<CR>
+map <F6>      :set !list<CR>
+map <F7>      :set !hls<CR>
