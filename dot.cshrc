@@ -5,8 +5,7 @@
 # see also csh(1), environ(7).
 #
 
-alias h		history 25
-alias j		jobs -l
+alias grep	grep --color=auto
 alias ls	ls -CFG
 alias ll	ls -lA
 
