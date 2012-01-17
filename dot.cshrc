@@ -15,11 +15,13 @@ set path = (/sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin $HOME/l
 set prompt = '%{\033[31;40m%}%m:%~%#%{\033[0m%} '
 
 setenv	BLOCKSIZE	K
-setenv	EDITOR		vim
+setenv	EDITOR		vi
 setenv  LESS		-S
 setenv	MONO_PATH	$HOME/local/dll
 setenv	PACKAGEROOT	ftp://ftp.fr.freebsd.org
 setenv	PAGER		less
+setenv	SHELL		/bin/tcsh
+setenv	VISUAL		vim
 
 if ($?prompt) then
 	set autolist ambiguous
