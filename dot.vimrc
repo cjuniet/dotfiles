@@ -10,7 +10,7 @@ set directory=~/.vim/tmp
 set expandtab
 set hlsearch
 set incsearch
-set mouse=a
+"set mouse=a
 set number
 set ruler
 set shiftwidth=2
@@ -25,13 +25,14 @@ set visualbell
 set nowrap
 
 syntax on
+set t_Co=256
 filetype plugin indent on
 
 if has("gui_running")
   colorscheme torte
   set columns=132
-  set guifont=ProggyTinySZ
-  set guioptions=aceg
+  "set guifont=ProggyTinySZ
+  set guioptions=acegm
   set lines=60
   set mousefocus
 endif
