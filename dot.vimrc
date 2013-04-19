@@ -10,7 +10,7 @@ set directory=~/.vim/tmp
 set expandtab
 set hlsearch
 set incsearch
-"set mouse=a
+set mouse=a
 set number
 set ruler
 set shiftwidth=2
@@ -27,6 +27,7 @@ set nowrap
 syntax on
 set t_Co=256
 filetype plugin indent on
+let c_space_errors = 1
 
 if has("gui_running")
   colorscheme torte
@@ -46,3 +47,4 @@ map <F6>      :set list!<CR>
 map <F7>      :set hls!<CR>
 map <F8>      :set paste!<CR>
 
+map <silent> <F12> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
