@@ -1,11 +1,11 @@
 set nocompatible
 
-set autoread
 set autoindent
-set cindent
+set autoread
 set background=dark
 set backspace=indent,eol,start
 set backupdir=~/.vim/tmp
+set cindent
 set directory=~/.vim/tmp
 set expandtab
 set hlsearch
@@ -20,20 +20,22 @@ set showmatch
 set smartcase
 set smartindent
 set smarttab
+set t_Co=256
 set tabstop=8
+set viminfo=
 set visualbell
 set nowrap
 
 syntax on
-set t_Co=256
 filetype plugin indent on
+
 let c_space_errors = 1
 
 if has("gui_running")
-  colorscheme torte
+  colorscheme solarized
   set columns=132
-  "set guifont=ProggyTinySZ
-  set guioptions=acegm
+  set guifont=ProggyCleanSZCP:h8:cANSI
+  set guioptions=acegmrT
   set lines=60
   set mousefocus
 endif
