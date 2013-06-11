@@ -32,8 +32,6 @@ syntax on
 filetype plugin indent on
 
 let c_space_errors=1
-let g:tex_flavor='latex'
-let viminfopath=$VIM."/.viminfo"
 
 if has("gui_running")
   colorscheme solarized
