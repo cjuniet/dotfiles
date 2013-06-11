@@ -31,7 +31,7 @@ set nowrap
 syntax on
 filetype plugin indent on
 
-let c_space_errors = 1
+let c_space_errors=1
 let g:tex_flavor='latex'
 let viminfopath=$VIM."/.viminfo"
 
