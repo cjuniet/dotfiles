@@ -7,19 +7,21 @@
 #
 
 alias c++11	c++ -std=c++11 -stdlib=libc++
-alias grep	grep --color=auto
+alias cls	echo -n 'c'
+alias grep	grep --color
 alias ls	ls -CFG
 alias ll	ls -lA
 
 # A righteous umask
 umask 22
 
-set path = (/sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin $HOME/local/bin)
+set path = ($HOME/local/bin /sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin)
 
 setenv	BLOCKSIZE	K
 setenv	EDITOR		vi
+setenv	LC_CTYPE	en_US.UTF-8
 setenv	LD_LIBRARY_PATH	$HOME/local/lib
-setenv	LESS		-rS
+setenv	LESS		'-FRSX'
 setenv	PACKAGEROOT	ftp://ftp.fr.freebsd.org
 setenv	PAGER		less
 setenv	SCALA_HOME	/usr/local/share/scala
@@ -31,7 +33,9 @@ if ($?prompt) then
 	if ($uid == 0) then
 		set user = root
 	endif
-	set prompt = '%{\033[31;40m%}%m:%~%#%{\033[0m%} '
+	set prompt = '%{\033[31m%}%m:%~%#%{\033[0m%} '
+
+	complete cd 'p/1/d/'
 
 	set filec
 	set history = 1000
