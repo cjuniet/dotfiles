@@ -4,9 +4,9 @@ set autoindent
 set autoread
 set background=dark
 set backspace=indent,eol,start
-set backupdir=~/.vim/tmp
+set backupdir=$HOME/.vim/tmp
 set cindent
-set directory=~/.vim/tmp
+set directory=$HOME/.vim/tmp
 set expandtab
 set hlsearch
 set incsearch
@@ -15,7 +15,7 @@ set mouse=a
 set number
 set ruler
 set shellslash
-set shiftwidth=4
+set shiftwidth=2
 set shortmess=aIOoTt
 set showcmd
 set showmatch
@@ -30,11 +30,13 @@ set nowrap
 
 syntax on
 filetype plugin indent on
-
 let c_space_errors=1
 
+let g:solarized_italic=0
+let g:solarized_menu=0
+colorscheme solarized
+
 if has("gui_running")
-  colorscheme solarized
   set columns=132
   set guifont=ProggyCleanSZCP:h8:cANSI
   set guioptions=acegmrT
