@@ -32,16 +32,16 @@ syntax on
 filetype plugin indent on
 let c_space_errors=1
 
-let g:solarized_italic=0
-let g:solarized_menu=0
-colorscheme solarized
-
 if has("gui_running")
   set columns=132
-  set guifont=ProggyCleanSZCP:h8:cANSI
+  set guifont=ProggyCleanTTSZ\ 12
   set guioptions=acegmrT
   set lines=60
   set mousefocus
+
+  let g:solarized_italic=0
+  let g:solarized_menu=0
+  colorscheme solarized
 endif
 
 map Q gq
