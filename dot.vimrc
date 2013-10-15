@@ -12,9 +12,11 @@ set hlsearch
 set incsearch
 set iskeyword+=:
 set mouse=a
+set nrformats-=octal
 set number
 set ruler
 set shellslash
+set shiftround
 set shiftwidth=2
 set shortmess=aIOoTt
 set showcmd
@@ -26,6 +28,7 @@ set spelllang=en_us
 set t_Co=256
 set tabstop=8
 set visualbell
+set wildmenu
 set nowrap
 
 syntax on
@@ -35,7 +38,7 @@ let c_space_errors=1
 if has("gui_running")
   set columns=132
   set guifont=ProggyCleanTTSZ\ 12
-  set guioptions=acegmrT
+  set guioptions=aceglmrT
   set lines=60
   set mousefocus
 
@@ -53,5 +56,6 @@ map <F6>      :set list!<CR>
 map <F7>      :set hls!<CR>
 map <F8>      :set paste!<CR>
 map <F9>      :set spell!<CR>
-map <F11>     gqap
+map <F10>     :NERDTreeToggle<CR>
+map <F11>     :TagbarToggle<CR>
 map <silent> <F12> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
