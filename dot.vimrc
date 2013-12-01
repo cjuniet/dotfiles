@@ -42,8 +42,6 @@ set nowrap
 
 let c_space_errors=1
 let java_space_errors=1
-let g:solarized_bold=0
-let g:solarized_italic=0
 let g:solarized_menu=0
 let g:solarized_visibility="high"
 let g:unite_data_directory=&backupdir."/unite"
