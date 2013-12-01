@@ -56,7 +56,7 @@ filetype plugin indent on
 if has("gui_running")
   set columns=132
   set guifont=ProggyCleanTTSZ\ 12
-  set guioptions=acegm
+  set guioptions=aceg
   set lines=60
   set mousefocus
 endif
