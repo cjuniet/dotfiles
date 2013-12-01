@@ -33,7 +33,7 @@ set smartindent
 set smarttab
 set softtabstop=2
 set spelllang=en_us
-set statusline=%<%f\ %{fugitive#statusline()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set t_Co=256
 set tabstop=8
 set visualbell
