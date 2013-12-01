@@ -1,5 +1,6 @@
 # PATHS #
-PATH="$HOME/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
+SCALA_HOME="$HOME/local/scala"
+PATH="$HOME/local/bin:$SCALA_HOME/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
 LD_LIBRARY_PATH="$HOME/local/lib"
 
 # ENVIRONMENT VARIABLES #
