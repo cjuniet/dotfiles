@@ -40,16 +40,13 @@ set visualbell
 set wildmenu
 set nowrap
 
+syntax on
+filetype plugin indent on
+
 let c_space_errors=1
 let java_space_errors=1
-let g:solarized_menu=0
-let g:solarized_visibility="high"
 let g:unite_data_directory=&backupdir."/unite"
 let g:vimfiler_data_directory=&backupdir."/vimfiler"
-
-syntax on
-colorscheme solarized
-filetype plugin indent on
 
 if has("gui_running")
   set columns=132
@@ -57,6 +54,10 @@ if has("gui_running")
   set guioptions=aceg
   set lines=60
   set mousefocus
+
+  let g:solarized_menu=0
+  let g:solarized_visibility="high"
+  colorscheme solarized
 endif
 
 map Q gqip
