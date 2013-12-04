@@ -10,14 +10,13 @@ set backspace=indent,eol,start
 set backupdir=$HOME/.vim/tmp
 set cindent
 set directory=$HOME/.vim/tmp
-set encoding=utf-8
 set expandtab
 set hlsearch
 set incsearch
 set iskeyword+=:
 set laststatus=2
 set linebreak
-set listchars=eol:Â¶,tab:Â¬\ ,trail:Â·,extends:Â»,precedes:Â«,nbsp:Â·
+set listchars=eol:¶,tab:¬\ ,trail:·,extends:»,precedes:«,nbsp:·
 set mouse=a
 set nrformats-=octal
 set number
@@ -43,6 +42,10 @@ set nowrap
 syntax on
 filetype plugin indent on
 
+let g:solarized_menu=0
+let g:solarized_visibility="high"
+colorscheme solarized
+
 let c_space_errors=1
 let java_space_errors=1
 let g:unite_data_directory=&backupdir."/unite"
@@ -54,10 +57,6 @@ if has("gui_running")
   set guioptions=aceg
   set lines=60
   set mousefocus
-
-  let g:solarized_menu=0
-  let g:solarized_visibility="high"
-  colorscheme solarized
 endif
 
 map Q gqip
