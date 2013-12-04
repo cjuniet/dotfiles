@@ -7,7 +7,7 @@ LD_LIBRARY_PATH="$HOME/local/lib"
 umask 022
 BLOCKSIZE=K
 EDITOR=vi
-LC_CTYPE=en_US.UTF-8
+LANG=en_US.UTF-8
 LESS='-FRSX'
 PAGER=less
 VISUAL=vim
@@ -42,6 +42,8 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "\e[A" history-beginning-search-backward-end
 bindkey "\e[B" history-beginning-search-forward-end
+bindkey "\e[7~" beginning-of-line
+bindkey "\e[8~" end-of-line
 zstyle :compinstall filename '/home/chris/.zshrc'
 autoload -Uz compinit
 compinit
