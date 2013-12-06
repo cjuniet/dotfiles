@@ -1,4 +1,3 @@
-# $FreeBSD: src/share/skel/dot.cshrc,v 1.14.16.2 2012/05/03 19:55:36 eadler Exp $
 #
 # .cshrc - csh resource script, read at beginning of execution by each shell
 #
@@ -7,7 +6,6 @@
 #
 
 alias c++11	c++ -std=c++11 -stdlib=libc++
-alias cls	echo -n 'c'
 alias grep	grep --color
 alias ls	ls -CFG
 alias ll	ls -lA
@@ -19,12 +17,10 @@ set path = ($HOME/local/bin /sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/l
 
 setenv	BLOCKSIZE	K
 setenv	EDITOR		vi
-setenv	LC_CTYPE	en_US.UTF-8
+setenv	LANG		en_US.UTF-8
 setenv	LD_LIBRARY_PATH	$HOME/local/lib
 setenv	LESS		'-FRSX'
-setenv	PACKAGEROOT	ftp://ftp.fr.freebsd.org
 setenv	PAGER		less
-setenv	SCALA_HOME	/usr/local/share/scala
 setenv	SHELL		/bin/tcsh
 setenv	VISUAL		vim
 
@@ -33,7 +29,9 @@ if ($?prompt) then
 	if ($uid == 0) then
 		set user = root
 	endif
-	set prompt = '%{\033[31m%}%m:%~%#%{\033[0m%} '
+
+	#set prompt = '%{\033[31m%}%m:%~%#%{\033[0m%} '
+        alias precmd 'set prompt="`gitprompt "%m:%~" "%#"` "'
 
 	complete cd 'p/1/d/'
 

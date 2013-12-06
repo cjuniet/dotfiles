@@ -1,0 +1,6 @@
+[alias]
+	tree = log -16 --all --graph --decorate --oneline
+[color]
+	ui = true
+[push]
+	default = simple
