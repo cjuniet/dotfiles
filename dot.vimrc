@@ -15,6 +15,7 @@ set expandtab
 set fileencoding=utf-8
 set hlsearch
 set incsearch
+set ignorecase
 set laststatus=2
 set linebreak
 set listchars=eol:¶,tab:¬\ ,trail:·,extends:»,precedes:«,nbsp:·
