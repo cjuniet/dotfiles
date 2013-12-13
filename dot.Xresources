@@ -1,5 +1,6 @@
 XTerm*reverseVideo: true
 
+URxvt.font: xft:Terminus:pixelsize=9
 URxvt.scrollBar: false
 URxvt.termName: rxvt-unicode-256color
 URxvt.title: terminal

@@ -55,7 +55,7 @@ let java_space_errors=1
 
 if has("gui_running")
   set columns=132
-  set guifont=ProggyCleanTTSZ\ 12
+  set guifont=Terminus
   set guiheadroom=0
   set guioptions=aceg
   set lines=60
