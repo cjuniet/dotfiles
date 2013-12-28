@@ -13,6 +13,7 @@ set directory=$HOME/.vim/tmp
 set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
+set hidden
 set hlsearch
 set incsearch
 set laststatus=2
