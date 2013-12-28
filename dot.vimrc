@@ -72,7 +72,9 @@ nmap <leader>w :set wrap!<CR>
 map Q gqip
 map <C-Tab>   :bnext<CR>
 map <S-C-Tab> :bprevious<CR>
-map <F4>      :MBEbd<CR>
+map <F4>      :bd<CR>
+map <F8>      :cprevious<CR>zz
+map <F10>     :cnext<CR>zz
 map <F11>     :TagbarToggle<CR>
 map <silent> <F12> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
