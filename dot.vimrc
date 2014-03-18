@@ -44,15 +44,22 @@ set wildmenu
 set nowrap
 
 syntax on
-if has("gui_running") || &term =~ "rxvt"
-  let g:solarized_menu=0
-  let g:solarized_visibility="high"
-  colorscheme solarized
-endif
-
 filetype plugin indent on
 let c_space_errors=1
 let java_space_errors=1
+
+let g:netrw_altv=1
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_keepdir=0
+let g:netrw_preview=1
+let g:netrw_sort_sequence='[\/]$,*'
+
+if has("gui_running") || &term =~ "rxvt"
+  let g:solarized_menu=0
+  let g:solarized_italic=0
+  colorscheme solarized
+endif
 
 if has("gui_running")
   set columns=132
@@ -70,9 +77,12 @@ nmap <leader>p :set paste!<CR>
 nmap <leader>s :set spell!<CR>
 nmap <leader>w :set wrap!<CR>
 
-map Q gqip
+nmap Q gqap
+vmap Q gq
+
 map <C-Tab>   :bnext<CR>
 map <S-C-Tab> :bprevious<CR>
+map <F1>      :Vexplore<CR>
 map <F4>      :bd<CR>
 map <F8>      :cprevious<CR>zz
 map <F10>     :cnext<CR>zz
