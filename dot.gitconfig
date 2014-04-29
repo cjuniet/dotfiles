@@ -1,5 +1,7 @@
 [alias]
 	tree = log -16 --all --graph --decorate --oneline
+[branch]
+	autosetuprebase = always
 [color]
 	ui = true
 [push]
