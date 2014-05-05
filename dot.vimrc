@@ -38,7 +38,6 @@ set smartcase
 set smartindent
 set smarttab
 set softtabstop=2
-set statusline=2
 set spelllang=en_us
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set t_Co=256
