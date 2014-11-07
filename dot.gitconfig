@@ -1,8 +1,17 @@
 [alias]
-	tree = log -16 --all --graph --decorate --oneline
+  br = branch
+  ci = commit
+  co = checkout
+  fap = fetch --all --prune
+  ft = log --all --graph --decorate --oneline
+  last = log -1 --stat
+  review = push gerrit HEAD:refs/publish/master
+  st = status -sb
+  sync = fetch origin master:master
+  tree = log -16 --graph --decorate --oneline
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 [color]
-	ui = true
+  ui = true
 [push]
-	default = simple
+  default = simple

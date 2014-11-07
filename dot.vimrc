@@ -1,7 +1,16 @@
 set nocompatible
+filetype plugin indent on
+syntax on
 
-execute pathogen#infect()
-execute pathogen#helptags()
+"call plug#begin()
+"Plug 'cjuniet/vim-colors-solarized'
+"Plug 'fatih/vim-go'
+"Plug 'kien/ctrlp.vim'
+"Plug 'majutsushi/tagbar'
+"Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/syntastic'
+"Plug 'tpope/vim-fugitive'
+"call plug#end()
 
 set autochdir
 set autoindent
@@ -11,13 +20,16 @@ set backspace=indent,eol,start
 set backupdir=$HOME/.vim/tmp
 set cindent
 set cinoptions=l1,g0,(0,Ws
+set complete-=i
 set confirm
 set directory=$HOME/.vim/tmp
+set display+=lastline
 set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
 set hidden
 set hlsearch
+set ignorecase
 set incsearch
 set laststatus=2
 set linebreak
@@ -42,26 +54,15 @@ set spelllang=en_us
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set t_Co=256
 set tabstop=8
-set termencoding=utf8
+set termencoding=utf-8
 set visualbell
 set wildmenu
 set nowrap
 
-syntax on
-filetype plugin indent on
-autocmd VimEnter * if !argc() | NERDTree | endif
-
-let c_space_errors=1
-let java_space_errors=1
-let g:miniBufExplCycleArround=1
-let g:miniBufExplHideWhenDiff = 1
-let g:miniBufExplShowBufNumbers=0
-let g:miniBufExplUseSingleClick=1
-
-if &term =~ "screen"
-  colorscheme torte
-else
+if &term =~ "rxvt"
   colorscheme solarized
+else
+  colorscheme torte
 endif
 
 if has("gui_running")
@@ -75,21 +76,17 @@ endif
 
 nmap Q gqap
 vmap Q gq
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+nmap <silent> <C-K> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nmap <silent> <leader>e :NERDTreeToggle<CR>
+nmap <silent> <leader>l :set list!<CR>
+nmap <silent> <leader>t :TagbarToggle<CR>
+nmap <silent> <leader>p :set paste!<CR>
+nmap <silent> <leader>w :set wrap!<CR>
 
-nmap <leader>g :Gstatus<CR>
-nmap <leader>h :set hls!<CR>
-nmap <leader>l :set list!<CR>
-nmap <leader>p :set paste!<CR>
-nmap <leader>s :set spell!<CR>
-nmap <leader>w :set wrap!<CR>
-
-noremap <C-Tab>   :MBEbn<CR>
-noremap <S-C-Tab> :MBEbp<CR>
-
-map <F1>      :NERDTreeToggle<CR>
-map <F2>      :TagbarToggle<CR>
-map <F3>      :MBEToggle<CR>
-map <F4>      :MBEbd<CR>
-map <F5>      :cprevious<CR>zz
-map <F6>      :cnext<CR>zz
-map <silent> <F12> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+let c_space_errors=1
+let java_space_errors=1
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_map = '<c-p>'
+let g:go_bin_path = expand("$HOME/.vim/vim-go/")
+let g:tagbar_compact = 1
