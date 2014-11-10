@@ -7,6 +7,7 @@ Plug 'cjuniet/vim-colors-solarized'
 Plug 'fatih/vim-go'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
+Plug 'nanotech/jellybeans.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
@@ -77,8 +78,14 @@ endif
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+command! Q qall
+command! W wall
+
+nmap n nzz
+nmap N Nzz
 nmap Q gqap
 vmap Q gq
+
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 nmap <silent> <C-K> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 nmap <silent> <leader>e :NERDTreeToggle<CR>
@@ -92,11 +99,14 @@ let c_space_errors = 1
 let java_space_errors = 1
 
 let g:go_bin_path = expand("$HOME/.vim/vim-go/")
+
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeMinimalUI = 1
-let g:syntastic_error_symbol = "⇒"
+
+let g:syntastic_warning_symbol = "ϟ"
+let g:syntastic_error_symbol = "✗"
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = '-std=c++11'
-let g:syntastic_warning_symbol = "→"
+
 let g:tagbar_compact = 1
