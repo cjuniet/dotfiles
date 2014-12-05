@@ -3,6 +3,7 @@ filetype plugin indent on
 syntax on
 
 call plug#begin()
+Plug 'cjuniet/clang-format.vim'
 Plug 'cjuniet/vim-colors-solarized'
 Plug 'fatih/vim-go'
 Plug 'kien/ctrlp.vim'
@@ -63,11 +64,10 @@ set nowrap
 
 if &term =~ "rxvt"
   colorscheme solarized
-else
-  colorscheme jellybeans
 endif
 
 if has("gui_running")
+  colorscheme jellybeans
   set columns=132
   set guifont=Terminus
   set guiheadroom=0
@@ -87,9 +87,10 @@ nmap Q gqap
 vmap Q gq
 
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
-nmap <silent> <C-K> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 nmap <silent> <leader>e :NERDTreeToggle<CR>
+nmap <silent> <leader>g :Gstatus<CR>
 nmap <silent> <leader>l :set list!<CR>
+nmap <silent> <leader>k :bdelete<CR>
 nmap <silent> <leader>t :TagbarToggle<CR>
 nmap <silent> <leader>p :set paste!<CR>
 nmap <silent> <leader>r :set relativenumber!<CR>
