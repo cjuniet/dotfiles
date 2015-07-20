@@ -3,14 +3,19 @@ filetype plugin indent on
 syntax on
 
 call plug#begin()
+Plug 'airblade/vim-gitgutter'
+Plug 'bling/vim-airline'
 Plug 'cjuniet/clang-format.vim'
 Plug 'cjuniet/vim-colors-solarized'
+Plug 'derekwyatt/vim-scala'
 Plug 'fatih/vim-go'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'nanotech/jellybeans.vim'
+Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
+Plug 'Shougo/neocomplete.vim'
 Plug 'tpope/vim-fugitive'
 call plug#end()
 
@@ -48,13 +53,12 @@ set shortmess=aIOoTt
 set showbreak=»»»
 set showcmd
 set showmatch
-set showmode
+set noshowmode
 set smartcase
 set smartindent
 set smarttab
 set softtabstop=2
 set spelllang=en_us
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set t_Co=256
 set tabstop=8
 set termencoding=utf-8
@@ -62,12 +66,9 @@ set visualbell
 set wildmenu
 set nowrap
 
-if &term =~ "rxvt"
-  colorscheme solarized
-endif
+colorscheme jellybeans
 
 if has("gui_running")
-  colorscheme jellybeans
   set columns=132
   set guifont=Terminus
   set guiheadroom=0
@@ -98,16 +99,12 @@ nmap <silent> <leader>w :set wrap!<CR>
 
 let c_space_errors = 1
 let java_space_errors = 1
-
-let g:go_bin_path = expand("$HOME/.vim/vim-go/")
-
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeMinimalUI = 1
-
-let g:syntastic_warning_symbol = "ϟ"
-let g:syntastic_error_symbol = "✗"
+let g:go_bin_path = expand("$HOME/.vim/vim-go/")
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = '-std=c++11'
-
+let g:syntastic_cpp_compiler_options = '-std=c++14'
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "ϟ"
 let g:tagbar_compact = 1
