@@ -1,35 +1,21 @@
-set nocompatible
-filetype plugin indent on
-syntax on
+execute pathogen#infect()
+execute pathogen#helptags()
 
-call plug#begin()
-Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
-Plug 'cjuniet/clang-format.vim'
-Plug 'cjuniet/vim-colors-solarized'
-Plug 'derekwyatt/vim-scala'
-Plug 'fatih/vim-go'
-Plug 'kien/ctrlp.vim'
-Plug 'majutsushi/tagbar'
-Plug 'nanotech/jellybeans.vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-Plug 'Shougo/neocomplete.vim'
-Plug 'tpope/vim-fugitive'
-call plug#end()
+set nocompatible
+filetype indent plugin on
+syntax on
 
 set autochdir
 set autoindent
 set autoread
 set background=dark
 set backspace=indent,eol,start
-set backupdir=$HOME/.vim/tmp
+set backupdir=$TEMP
 set cindent
 set cinoptions=l1,g0,(0,Ws
 set complete-=i
 set confirm
-set directory=$HOME/.vim/tmp
+set directory=$TEMP
 set display+=lastline
 set encoding=utf-8
 set expandtab
@@ -45,7 +31,7 @@ set mouse=a
 set nrformats-=octal
 set number
 set ruler
-set shell=/bin/sh
+set shell=bash.exe
 set shellslash
 set shiftround
 set shiftwidth=2
@@ -66,11 +52,10 @@ set visualbell
 set wildmenu
 set nowrap
 
-colorscheme jellybeans
-
 if has("gui_running")
+  colorscheme jellybeans
   set columns=132
-  set guifont=Terminus
+  set guifont=Powerline_Consolas:h10:cDEFAULT
   set guiheadroom=0
   set guioptions=aceg
   set lines=60
@@ -103,10 +88,7 @@ let java_space_errors = 1
 let g:airline_powerline_fonts = 1
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeMinimalUI = 1
-let g:go_bin_path = expand("$HOME/.vim/vim-go/")
 let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = '-std=c++14'
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "ϟ"
 let g:tagbar_compact = 1
