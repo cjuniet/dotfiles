@@ -45,7 +45,6 @@ set mouse=a
 set nrformats-=octal
 set number
 set ruler
-set shell=/bin/sh
 set shellslash
 set shiftround
 set shiftwidth=2
@@ -63,12 +62,12 @@ set t_Co=256
 set tabstop=8
 set termencoding=utf-8
 set visualbell
+set wildignore=*.o,*.obj
 set wildmenu
 set nowrap
 
-colorscheme jellybeans
-
 if has("gui_running")
+  colorscheme jellybeans
   set columns=132
   set guifont=Terminus
   set guiheadroom=0
@@ -97,13 +96,20 @@ nmap <silent> <leader>t :TagbarToggle<CR>
 nmap <silent> <leader>p :set paste!<CR>
 nmap <silent> <leader>r :set relativenumber!<CR>
 nmap <silent> <leader>w :set wrap!<CR>
+nmap <silent> <F11>     :cwindow<CR>
+nmap <silent> <F12>     :make<CR>
 
 let c_space_errors = 1
 let java_space_errors = 1
 let g:airline_powerline_fonts = 1
+let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp'
+let g:ctrlp_clear_cache_on_exit = 0
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeMinimalUI = 1
-let g:go_bin_path = expand("$HOME/.vim/vim-go/")
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = '-std=c++14'
