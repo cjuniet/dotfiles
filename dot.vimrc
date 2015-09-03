@@ -6,9 +6,10 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'cjuniet/clang-format.vim'
-Plug 'cjuniet/vim-colors-solarized'
+"Plug 'cjuniet/vim-colors-solarized'
 Plug 'derekwyatt/vim-scala'
 Plug 'fatih/vim-go'
+"Plug 'jeaye/color_coded'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'nanotech/jellybeans.vim'
@@ -17,9 +18,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/neocomplete.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
 call plug#end()
 
-set autochdir
 set autoindent
 set autoread
 set background=dark
@@ -97,21 +98,21 @@ nmap <silent> <leader>t :TagbarToggle<CR>
 nmap <silent> <leader>p :set paste!<CR>
 nmap <silent> <leader>r :set relativenumber!<CR>
 nmap <silent> <leader>w :set wrap!<CR>
-nmap <silent> <F5>      :cprevious<CR>
-nmap <silent> <F6>      :cnext<CR>
 nmap <silent> <F12>     :make<CR>
 
 let c_space_errors = 1
 let java_space_errors = 1
+let g:clang_format_style = 'file'
 let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp'
 let g:ctrlp_clear_cache_on_exit = 0
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeMinimalUI = 1
+let g:syntastic_mode_map = { "mode": "passive" }
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_checkers = [ 'clang_check' ]
+let g:syntastic_cpp_clang_check_post_args = '-p build'
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = '-std=c++14'
 let g:syntastic_error_symbol = "✗"
