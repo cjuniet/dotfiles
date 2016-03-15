@@ -22,6 +22,7 @@
 (setq mouse-wheel-follow-mouse 't)
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+(setq mouse-yank-at-point t)
 (mouse-wheel-mode t)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -33,6 +34,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-save-default nil)
+ '(blink-cursor-mode nil)
  '(compilation-read-command nil)
  '(initial-scratch-message nil)
  '(inhibit-startup-screen t)
@@ -40,6 +42,7 @@
  '(menu-bar-mode nil)
  '(scroll-bar-mode nil)
  '(scroll-step 1)
+ '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
