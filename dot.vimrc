@@ -6,19 +6,18 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'cjuniet/clang-format.vim'
-"Plug 'cjuniet/vim-colors-solarized'
-Plug 'derekwyatt/vim-scala'
-Plug 'fatih/vim-go'
-"Plug 'jeaye/color_coded'
+Plug 'cjuniet/vim-colors-solarized'
+Plug 'jeaye/color_coded'
 Plug 'kien/ctrlp.vim'
+Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'
 Plug 'nanotech/jellybeans.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-Plug 'Shougo/neocomplete.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'valloric/youcompleteme'
 call plug#end()
 
 set autoindent
@@ -67,54 +66,49 @@ set wildignore=*.o,*.obj
 set wildmenu
 set nowrap
 
+colorscheme jellybeans
+
 if has("gui_running")
-  colorscheme jellybeans
-  set columns=132
-  set guifont=Terminus
+  set columns=160
+  set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h10
   set guiheadroom=0
   set guioptions=aceg
-  set lines=60
+  set lines=50
   set mousefocus
-  let g:airline_powerline_fonts = 0
+  let g:airline_powerline_fonts = 1
 endif
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 command! Q qall
 command! W wall
 
+let mapleader = ","
 nmap n nzz
 nmap N Nzz
 nmap Q gqap
 vmap Q gq
-
-nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
-nnoremap <silent> <C-K> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nmap <silent> <leader>b :make<CR>
 nmap <silent> <leader>e :NERDTreeToggle<CR>
 nmap <silent> <leader>g :Gstatus<CR>
-nmap <silent> <leader>l :set list!<CR>
 nmap <silent> <leader>k :bdelete<CR>
 nmap <silent> <leader>t :TagbarToggle<CR>
-nmap <silent> <leader>p :set paste!<CR>
-nmap <silent> <leader>r :set relativenumber!<CR>
-nmap <silent> <leader>w :set wrap!<CR>
-nmap <silent> <F12>     :make<CR>
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+nnoremap <silent> <C-K> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 let c_space_errors = 1
 let java_space_errors = 1
+
 let g:clang_format_style = 'file'
 let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp'
 let g:ctrlp_clear_cache_on_exit = 0
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeMinimalUI = 1
-let g:syntastic_mode_map = { "mode": "passive" }
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_checkers = [ 'clang_check' ]
-let g:syntastic_cpp_clang_check_post_args = '-p build'
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = '-std=c++14'
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "ϟ"
+let g:rainbow_active = 1
 let g:tagbar_compact = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_error_symbol = "✗→"
+let g:ycm_extra_conf_globlist = [ '~/*' ]
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_warning_symbol = "△→"
+

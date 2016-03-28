@@ -11,7 +11,11 @@
     clojure-mode
     company
     elixir-mode
+    evil
+    helm
+    magit
     monokai-theme
+    projectile
     rainbow-delimiters
     solarized-theme
     zenburn-theme))
@@ -34,18 +38,12 @@
  '(auto-save-default nil)
  '(blink-cursor-mode nil)
  '(custom-enabled-themes (quote (monokai)))
- '(custom-safe-themes
-   (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4"
-     "38ba6a938d67a452aeb1dada9d7cdeca4d9f18114e9fc8ed2b972573138d4664"
-     "ff02e8e37c9cfd192d6a0cb29054777f5254c17b1bf42023ba52b65e4307b76a"
-     default)))
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
  '(make-backup-files nil)
  '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 1) ((control)))))
- '(visible-bell nil))
+ '(ring-bell-function (quote ignore)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
