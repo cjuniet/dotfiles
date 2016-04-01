@@ -12,9 +12,11 @@ Plug 'kien/ctrlp.vim'
 Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'
 Plug 'nanotech/jellybeans.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'valloric/youcompleteme'
@@ -34,6 +36,7 @@ set display+=lastline
 set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
+set formatoptions+=j
 set hidden
 set hlsearch
 set ignorecase
@@ -66,16 +69,17 @@ set wildignore=*.o,*.obj
 set wildmenu
 set nowrap
 
-colorscheme jellybeans
-
-if has("gui_running")
-  set columns=160
+if !has("gui_running")
+  colorscheme jellybeans
+else
+  let g:airline_powerline_fonts = 1
+  colorscheme solarized
+  set columns=212
   set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h10
   set guiheadroom=0
   set guioptions=aceg
-  set lines=50
+  set lines=57
   set mousefocus
-  let g:airline_powerline_fonts = 1
 endif
 
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -110,5 +114,13 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_error_symbol = "✗→"
 let g:ycm_extra_conf_globlist = [ '~/*' ]
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_warning_symbol = "△→"
 
+let s:rainbow_conf = {
+\ 'guifgs': ['darkorange3', 'seagreen3', 'deepskyblue', 'darkorchid3', 'forestgreen', 'lightblue', 'hotpink', 'mistyrose1'],
+\ 'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+\ 'operators': '_[\,\+\*\-\&\^\!\.\:\<\>\;\=\|\?]_',
+\ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\ 'separately': { '*': {} }
+\}
