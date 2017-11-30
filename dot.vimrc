@@ -9,16 +9,19 @@ Plug 'cjuniet/clang-format.vim'
 Plug 'cjuniet/vim-colors-solarized'
 Plug 'jeaye/color_coded'
 Plug 'kien/ctrlp.vim'
+Plug 'lsdr/monokai'
 Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'
 Plug 'nanotech/jellybeans.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'tbastos/vim-lua'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'udalov/kotlin-vim'
 Plug 'valloric/youcompleteme'
 call plug#end()
 
@@ -71,14 +74,15 @@ set nowrap
 
 if !has("gui_running")
   colorscheme jellybeans
+  let g:color_coded_enabled = 0
 else
   let g:airline_powerline_fonts = 1
-  colorscheme solarized
-  set columns=212
+  colorscheme monokai
+  set columns=239
   set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h10
   set guiheadroom=0
   set guioptions=aceg
-  set lines=57
+  set lines=65
   set mousefocus
 endif
 
@@ -87,7 +91,6 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 command! Q qall
 command! W wall
 
-let mapleader = ","
 nmap n nzz
 nmap N Nzz
 nmap Q gqap
@@ -114,7 +117,6 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_error_symbol = "✗→"
 let g:ycm_extra_conf_globlist = [ '~/*' ]
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_warning_symbol = "△→"
 
 let s:rainbow_conf = {
