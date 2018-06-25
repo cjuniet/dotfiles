@@ -1,8 +1,10 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives
+             '("org" . "https://orgmode.org/elpa/"))
 (package-initialize)
-(when (not package-archive-contents)
+(unless package-archive-contents
   (package-refresh-contents))
 
 (defvar my-packages '(
@@ -16,6 +18,7 @@
     magit
     monokai-theme
     nyan-mode
+    org
     projectile
     rainbow-delimiters
     solarized-theme
@@ -46,6 +49,8 @@
  '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 1) ((control)))))
  '(ring-bell-function (quote ignore))
+ '(scroll-conservatively 1000)
+ '(scroll-preserve-screen-position 1)
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
