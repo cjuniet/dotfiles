@@ -4,25 +4,36 @@ syntax on
 
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
+Plug 'arcticicestudio/nord-vim'
 Plug 'bling/vim-airline'
 Plug 'cjuniet/clang-format.vim'
 Plug 'cjuniet/vim-colors-solarized'
+Plug 'elixir-editors/vim-elixir'
+Plug 'godlygeek/tabular'
+Plug 'jceb/vim-orgmode'
 Plug 'jeaye/color_coded'
+Plug 'jtratner/vim-flavored-markdown'
 Plug 'kien/ctrlp.vim'
 Plug 'lsdr/monokai'
 Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'
+Plug 'mhinz/vim-mix-format'
 Plug 'nanotech/jellybeans.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'slashmili/alchemist.vim'
 Plug 'tbastos/vim-lua'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'udalov/kotlin-vim'
 Plug 'valloric/youcompleteme'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set autoindent
@@ -76,13 +87,12 @@ if !has("gui_running")
   colorscheme jellybeans
   let g:color_coded_enabled = 0
 else
-  let g:airline_powerline_fonts = 1
   colorscheme monokai
-  set columns=239
-  set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h10
+  set columns=300
+  set guifont=Anonymice\ Nerd\ Font\ Complete\ Mono:h16
   set guiheadroom=0
   set guioptions=aceg
-  set lines=65
+  set lines=100
   set mousefocus
 endif
 
@@ -106,13 +116,17 @@ nnoremap <silent> <C-K> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 let c_space_errors = 1
 let java_space_errors = 1
 
+let g:airline_powerline_fonts = 1
 let g:clang_format_style = 'file'
 let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp'
 let g:ctrlp_clear_cache_on_exit = 0
+let g:mix_format_on_save = 1
+let g:mix_format_silent_errors = 1
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeMinimalUI = 1
 let g:rainbow_active = 1
 let g:tagbar_compact = 1
+let g:vim_markdown_folding_disabled = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_error_symbol = "✗→"
 let g:ycm_extra_conf_globlist = [ '~/*' ]
